@@ -1,0 +1,256 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f0f14,
+            #1a1024,
+            #0f0f14
+        );
+
+    color: white;
+
+    min-height: 100vh;
+}
+
+
+.edit-container {
+    width: 90%;
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    padding: 50px 0;
+}
+
+
+.edit-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.edit-header h1 {
+    font-size: 40px;
+
+    color: #ff4fd8;
+
+    margin-bottom: 10px;
+}
+
+
+.edit-header p {
+    color: #bdbdc7;
+
+    font-size: 16px;
+}
+
+
+.edit-card {
+    background: #18131f;
+
+    border: 1px solid #3b2048;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #eeeeee;
+
+    font-weight: bold;
+}
+
+
+.form-group input[type="text"],
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 13px;
+
+    background: #0f0d14;
+
+    color: white;
+
+    border: 1px solid #4b2b59;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+
+    border-color: #ff4fd8;
+
+    box-shadow:
+        0 0 8px rgba(255, 79, 216, 0.3);
+}
+
+
+.checkbox-group {
+    margin-bottom: 15px;
+}
+
+
+.checkbox-group label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #dddddd;
+
+    cursor: pointer;
+}
+
+
+.checkbox-group input {
+
+    accent-color: #ff4fd8;
+
+    width: 16px;
+
+    height: 16px;
+}
+
+
+.button-group {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+.update-btn,
+.cancel-btn {
+
+    flex: 1;
+
+    padding: 13px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+.update-btn {
+
+    border: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff4fd8,
+            #9b5cff
+        );
+
+    color: white;
+
+    transition: 0.3s;
+}
+
+
+.update-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 20px rgba(255, 79, 216, 0.3);
+}
+
+
+.cancel-btn {
+
+    border: 1px solid #70429a;
+
+    background: #32164a;
+
+    color: #d9a2ff;
+
+    transition: 0.3s;
+}
+
+
+.cancel-btn:hover {
+
+    background: #512477;
+}
+
+
+@media (max-width: 600px) {
+
+    .edit-container {
+
+        width: 94%;
+
+        padding: 30px 0;
+    }
+
+
+    .edit-card {
+
+        padding: 20px;
+    }
+
+
+    .edit-header h1 {
+
+        font-size: 32px;
+    }
+
+
+    .button-group {
+
+        flex-direction: column;
+    }
+
+}

@@ -1,0 +1,173 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Note</title>
+
+    <link rel="stylesheet" href="{% static 'notesapp/edit.css' %}">
+
+</head>
+
+
+<body>
+
+    <div class="edit-container">
+
+        <!-- Header -->
+
+        <header class="edit-header">
+
+            <h1>Edit Note</h1>
+
+            <p>Update your note details</p>
+
+        </header>
+
+
+        <!-- Edit Form -->
+
+        <section class="edit-card">
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <!-- Title -->
+
+                <div class="form-group">
+
+                    <label for="title">
+                        Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        value="{{ note.title }}"
+                        placeholder="Enter note title"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Content -->
+
+                <div class="form-group">
+
+                    <label for="content">
+                        Content
+                    </label>
+
+                    <textarea
+                        id="content"
+                        name="content"
+                        rows="7"
+                        placeholder="Write your note..."
+                        required
+                    >{{ note.content }}</textarea>
+
+                </div>
+
+
+                <!-- Category -->
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <input
+                        type="text"
+                        id="category"
+                        name="category"
+                        value="{{ note.category }}"
+                        placeholder="e.g. Study, Work, Personal"
+                    >
+
+                </div>
+
+
+                <!-- Pinned -->
+
+                <div class="checkbox-group">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            name="is_pinned"
+                            {% if note.is_pinned %}checked{% endif %}
+                        >
+
+                        Pin this note
+
+                    </label>
+
+                </div>
+
+
+                <!-- Archived -->
+
+                <div class="checkbox-group">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            name="is_archived"
+                            {% if note.is_archived %}checked{% endif %}
+                        >
+
+                        Archive this note
+
+                    </label>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="button-group">
+
+                    <button
+                        type="submit"
+                        class="update-btn"
+                    >
+                        Update Note
+                    </button>
+
+
+                    <a
+                        href="{% url 'home' %}"
+                        class="cancel-btn"
+                    >
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="{% static 'notesapp/edit.js' %}"></script>
+
+</body>
+
+</html>
